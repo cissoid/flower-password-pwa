@@ -1,0 +1,31 @@
+{
+  "name": "flower-password-pwa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/webpack-cli/bin/webpack.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cissoid/flower-password-pwa.git"
+  },
+  "author": "cissoid",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cissoid/flower-password-pwa/issues"
+  },
+  "homepage": "https://github.com/cissoid/flower-password-pwa#readme",
+  "dependencies": {
+    "blueimp-md5": "^2.10.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "copy-webpack-plugin": "^4.5.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
+  }
+}
