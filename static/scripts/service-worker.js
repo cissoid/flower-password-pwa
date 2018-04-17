@@ -1,8 +1,9 @@
 const cacheName = '';
 const filesToCache = [
-    '/',
-    '/index.html',
-    '/static/scripts/index.js'
+    '../../../',
+    '../../../index.html',
+    './index.js',
+    '../styles/style.css'
 ];
 
 self.addEventListener('install', function(e) {
