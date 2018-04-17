@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0;
+  width: 768px;
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto auto;
+
+    & > input, div {
+      margin: 16px auto 16px;
+    }
+  }
+}

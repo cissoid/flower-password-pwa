@@ -1,0 +1,15 @@
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: 0 auto 0;
+  width: 768px; }
+  body > main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin: 60px auto auto; }
+    body > main > input, body > main div {
+      margin: 16px auto 16px; }

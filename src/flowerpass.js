@@ -1,6 +1,6 @@
-import md5 from 'blueimp-md5';
+const md5 = require('blueimp-md5');
 
-export function flowerpass(passwd, salt) {
+function flowerpass(passwd, salt) {
     const tmp = md5(passwd, salt);
     const source = md5(tmp, "snow");
     const rule = md5(tmp, "kise");
@@ -27,3 +27,5 @@ function ensureNotBeginWithDigit(passwd) {
         return passwd;
     }
 }
+
+module.exports = flowerpass;

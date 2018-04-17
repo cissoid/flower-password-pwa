@@ -1,8 +1,8 @@
-import jQuery from 'jquery';
+const jQuery = require('jquery');
 
-import {
-    flowerpass
-} from 'flowerpass';
+const flowerpass = require('flowerpass');
+
+require('style.scss');
 
 function calc() {
     const passwd = jQuery('#passwd').val();
@@ -15,3 +15,9 @@ jQuery(function() {
     jQuery('#passwd').on('change keyup', calc);
     jQuery('#salt').on('change keyup', calc);
 });
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/static/scripts/service-worker.js').then(() => {
+        console.log('service worker registered');
+    });
+}

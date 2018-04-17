@@ -97,11 +97,10 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /*!***************************!*\
   !*** ./src/flowerpass.js ***!
   \***************************/
-/*! exports provided: flowerpass */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"flowerpass\", function() { return flowerpass; });\n/* harmony import */ var blueimp_md5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! blueimp-md5 */ \"./node_modules/blueimp-md5/js/md5.js\");\n/* harmony import */ var blueimp_md5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(blueimp_md5__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction flowerpass(passwd, salt) {\n    const tmp = blueimp_md5__WEBPACK_IMPORTED_MODULE_0___default()(passwd, salt);\n    const source = blueimp_md5__WEBPACK_IMPORTED_MODULE_0___default()(tmp, \"snow\");\n    const rule = blueimp_md5__WEBPACK_IMPORTED_MODULE_0___default()(tmp, \"kise\");\n    let result = upperCasePassword(source, rule);\n    return ensureNotBeginWithDigit(result).substr(0, 16);\n}\n\nfunction upperCasePassword(source, rule) {\n    const c = 'sunlovesnow1990090127xykab';\n    source = source.split('');\n    rule = rule.split('');\n    for (let i = 0; i < source.length; i++) {\n        if (isNaN(source[i]) && c.search(rule[i]) > -1) {\n            source[i] = source[i].toUpperCase();\n        }\n    }\n    return source.join('');\n}\n\nfunction ensureNotBeginWithDigit(passwd) {\n    if (!isNaN(passwd[0])) {\n        return 'K' + passwd.substr(1);\n    } else {\n        return passwd;\n    }\n}\n\n//# sourceURL=webpack:///./src/flowerpass.js?");
+eval("const md5 = __webpack_require__(/*! blueimp-md5 */ \"./node_modules/blueimp-md5/js/md5.js\");\n\nfunction flowerpass(passwd, salt) {\n    const tmp = md5(passwd, salt);\n    const source = md5(tmp, \"snow\");\n    const rule = md5(tmp, \"kise\");\n    let result = upperCasePassword(source, rule);\n    return ensureNotBeginWithDigit(result).substr(0, 16);\n}\n\nfunction upperCasePassword(source, rule) {\n    const c = 'sunlovesnow1990090127xykab';\n    source = source.split('');\n    rule = rule.split('');\n    for (let i = 0; i < source.length; i++) {\n        if (isNaN(source[i]) && c.search(rule[i]) > -1) {\n            source[i] = source[i].toUpperCase();\n        }\n    }\n    return source.join('');\n}\n\nfunction ensureNotBeginWithDigit(passwd) {\n    if (!isNaN(passwd[0])) {\n        return 'K' + passwd.substr(1);\n    } else {\n        return passwd;\n    }\n}\n\nmodule.exports = flowerpass;\n\n//# sourceURL=webpack:///./src/flowerpass.js?");
 
 /***/ }),
 
@@ -109,11 +108,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var flowerpass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flowerpass */ \"./src/flowerpass.js\");\n\n\n\n\nfunction calc() {\n    const passwd = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#passwd').val();\n    const salt = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#salt').val();\n    const result = Object(flowerpass__WEBPACK_IMPORTED_MODULE_1__[\"flowerpass\"])(passwd, salt);\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#result').html(result);\n}\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#passwd').on('change keyup', calc);\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#salt').on('change keyup', calc);\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\nconst flowerpass = __webpack_require__(/*! flowerpass */ \"./src/flowerpass.js\");\n\n__webpack_require__(/*! style.scss */ \"./src/style.scss\");\n\nfunction calc() {\n    const passwd = jQuery('#passwd').val();\n    const salt = jQuery('#salt').val();\n    const result = flowerpass(passwd, salt);\n    jQuery('#result').html(result);\n}\n\njQuery(function () {\n    jQuery('#passwd').on('change keyup', calc);\n    jQuery('#salt').on('change keyup', calc);\n});\n\nif ('serviceWorker' in navigator) {\n    navigator.serviceWorker.register('/static/scripts/service-worker.js').then(() => {\n        console.log('service worker registered');\n    });\n}\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/style.scss?");
 
 /***/ })
 
