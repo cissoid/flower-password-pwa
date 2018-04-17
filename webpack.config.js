@@ -2,7 +2,6 @@ const path = require('path');
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin(path.join('styles', 'style.css'));
 
@@ -49,13 +48,6 @@ module.exports = {
         }]
     },
     plugins: [
-        extractCSS,
-        new CopyWebpackPlugin([{
-            'from': path.join(__dirname, 'src', 'manifest.json'),
-            'to': path.join(__dirname, 'static', 'manifest.json')
-        }, {
-            'from': path.join(__dirname, 'src', 'service-worker.js'),
-            'to': path.join(__dirname, 'static', 'scripts', 'service-worker.js')
-        }])
+        extractCSS
     ]
 };
