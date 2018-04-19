@@ -4,7 +4,6 @@ const filesToCache = [
     'index.html',
     'static/scripts/index.js',
     'static/styles/style.css',
-    'static/images/favicon/favicon_48x48.png',
     'static/images/favicon/favicon_96x96.png',
     'static/images/favicon/favicon_144x144.png',
     'static/images/favicon/favicon_192x192.png',
