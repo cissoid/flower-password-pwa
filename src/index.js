@@ -17,7 +17,7 @@ function copy() {
     textArea.select();
     const success = document.execCommand('copy');
     document.body.removeChild(textArea);
-    document.querySelector('#copy-button').innerText = 'Copyed!!';
+    document.querySelector('#copy-button').value = 'Copyed!!';
 }
 
 window.addEventListener('load', function() {
