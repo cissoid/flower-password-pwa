@@ -11,5 +11,24 @@ body {
     -ms-flex-direction: column;
         flex-direction: column;
     margin: 60px auto auto; }
-    body > main > input, body > main div {
-      margin: 16px auto 16px; }
+    body > main > #passwd, body > main #salt {
+      margin: 16px auto 16px;
+      padding: 6px 12px;
+      border-style: inset;
+      font-size: 1.5em;
+      color: #333333; }
+      body > main > #passwd::-webkit-input-placeholder, body > main #salt::-webkit-input-placeholder {
+        color: #DDDDDD; }
+      body > main > #passwd:-ms-input-placeholder, body > main #salt:-ms-input-placeholder {
+        color: #DDDDDD; }
+      body > main > #passwd::placeholder, body > main #salt::placeholder {
+        color: #DDDDDD; }
+    body > main > #result {
+      margin: 16px auto 16px;
+      font-size: 1.5em;
+      color: #333333; }
+    body > main > #copy-button {
+      padding: 16px auto 16px;
+      font-size: 1.5em;
+      color: #333333;
+      background-color: white; }

@@ -19,8 +19,7 @@
   },
   "homepage": "https://github.com/cissoid/flower-password-pwa#readme",
   "dependencies": {
-    "blueimp-md5": "^2.10.0",
-    "jquery": "^3.3.1"
+    "blueimp-md5": "^2.10.0"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",

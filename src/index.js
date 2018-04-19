@@ -1,19 +1,29 @@
-const jQuery = require('jquery');
-
 const flowerpass = require('flowerpass');
 
 require('style.scss');
 
 function calc() {
-    const passwd = jQuery('#passwd').val();
-    const salt = jQuery('#salt').val();
+    const passwd = document.querySelector('#passwd').value;
+    const salt = document.querySelector('#salt').value;
     const result = flowerpass(passwd, salt);
-    jQuery('#result').html(result);
+    document.querySelector('#result').innerText = result;
 }
 
-jQuery(function() {
-    jQuery('#passwd').on('change keyup', calc);
-    jQuery('#salt').on('change keyup', calc);
+function copy() {
+    const textArea = document.createElement('textarea');
+    textArea.value = document.querySelector('#result').innerText;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    const success = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    document.querySelector('#copy-button').innerText = 'Copyed!!';
+}
+
+window.addEventListener('load', function() {
+    document.querySelector('#passwd').addEventListener('keyup', calc);
+    document.querySelector('#salt').addEventListener('keyup', calc);
+    document.querySelector('#copy-button').addEventListener('click', copy);
 });
 
 if ('serviceWorker' in navigator) {
